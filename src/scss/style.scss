@@ -611,10 +611,10 @@ mark {
         }
 
         &_mobile {
-            display: block;
+            display: block !important;
 
             @media (min-width: $md3) {
-                display: none;
+                display: none !important;
             }
         }
     }

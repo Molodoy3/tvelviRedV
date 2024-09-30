@@ -90,6 +90,15 @@
         @media (max-width: $md4){
             text-align: center;
         }
+        transition: color 0.3s ease;
+        &:focus {
+            color: var(--red);
+        }
+        @media (any-hover: hover) {
+            &:hover{
+                color: var(--red);
+            }
+        }
     }
 
     &__bottom {

@@ -20,6 +20,9 @@ jobs:
         with:
           node-version: '16' # или ваша версия Node.js
 
+      - name: install npm
+        run: npm install
+        
       - name: Build project
         run: npm run build
       

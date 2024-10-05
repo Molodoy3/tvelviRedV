@@ -6,7 +6,7 @@
 @import 'fonts.scss';
 /*=============================================================================================================*/
 /*Размер шрифта по умолчанию /=============================================================================*/
-$mainFontSize: 12;
+$mainFontSize: 16;
 /*=============================================================================================================*/
 /*Контейнер и сетка /=============================================================================*/
 $mw: 1330;
@@ -51,7 +51,9 @@ $maxWidthContainer: 1440; //ширина макета
 /*=============================================================================================================*/
 /*Основные стили /=============================================================================*/
 body {
-    font-size: rem($mainFontSize);
+    //font-size: rem($mainFontSize);
+    line-height: perc(15, 12);
+    @include adaptiv-value('font-size', $mainFontSize, 12, 1);
     font-family: "Montserrat", sans-serif;
 
     &.lock {
@@ -92,11 +94,33 @@ body {
     }
 }
 
+.title-red {
+    font-family: "Micra", sans-serif;
+    @include adaptiv-value('font-size', 47, 27, 1);
+    @include adaptiv-value('margin-bottom', 22, 10, 1);
+    line-height: perc(57, 47);
+
+    mark {
+        color: var(--red);
+    }
+}
+
+.main-text {
+    line-height: perc(17, 14);
+    @include adaptiv-value('font-size', 20, 14, 1);
+}
+
 .button {
-    padding: rem(32) rem(29);
+    @include adaptiv-value('padding-right', 40.5, 24.5, 1);
+    @include adaptiv-value('padding-left', 40.5, 24.5, 1);
+    @include adaptiv-value('padding-top', 35, 23, 1);
+    @include adaptiv-value('padding-bottom', 35, 23, 1);
     display: inline-block;
     @include adaptiv-value('font-size', 14, 11, 1);
-    color: rgb(25, 25, 25);
+    color: #fff;
+    &.black-text{
+        color: #000;
+    }
     font-weight: 700;
     letter-spacing: 13%;
     text-transform: uppercase;
@@ -277,7 +301,7 @@ mark {
         }
 
         @media (max-width: 400px) {
-            margin-left: rem(-50);
+            margin-left: rem(-50) !important;
         }
 
         @media (max-width: 350px) {
@@ -1020,6 +1044,7 @@ mark {
         @media (max-width: $md3) {
             margin-bottom: rem(15);
         }
+
         max-width: rem(470);
     }
 
@@ -1084,22 +1109,27 @@ mark {
         display: flex;
         gap: rem(4);
         margin-bottom: rem(5);
-        @media (max-width: $md4){
+
+        @media (max-width: $md4) {
             flex-wrap: wrap;
         }
     }
 
     &__input {
         flex: 0 1 33.3333%;
-        @media (max-width: $md4){
+
+        @media (max-width: $md4) {
             flex: 0 1 100%;
         }
+
         border-radius: 6px;
         background: rgb(233, 233, 233);
         padding: 8px;
-        &::placeholder{
+
+        &::placeholder {
             color: rgb(66, 66, 66);
         }
+
         color: #000;
         width: 100%;
     }
@@ -1110,9 +1140,11 @@ mark {
         border-radius: 6px;
         background: rgb(233, 233, 233);
         padding: 8px;
-        &::placeholder{
+
+        &::placeholder {
             color: rgb(66, 66, 66);
         }
+
         color: #000;
         height: rem(79);
         width: 100%;
@@ -1134,9 +1166,232 @@ mark {
 
 /*=============================================================================================================*/
 /*=============================================================================================================*/
+//сервисы(шаги)
 /*=============================================================================================================*/
 /*=============================================================================================================*/
+.steps-welcome {
+    position: relative;
+    @include adaptiv-value('margin-bottom', 123, 80, 1);
+    @include adaptiv-value('padding-top', 150, 100, 1);
+    border-radius: 0px 0px 0px 80px;
+    overflow: hidden;
+
+    &__background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__container {
+        position: relative;
+
+        @media (min-width: $md3) {
+            display: flex;
+            column-gap: rem(20);
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    &__content {}
+
+    &__title {}
+
+    &__text {}
+
+    &__image {
+        @media (max-width: $md3) {
+            //margin: 0 auto;
+            max-width: rem(450);
+        }
+
+        flex: 0 0 perc(730, 1290);
+
+        img {
+            max-width: 100%;
+        }
+    }
+}
+
 /*=============================================================================================================*/
+.steps {
+    @include adaptiv-value('margin-bottom', 78, 28, 1);
+
+    &__container {}
+
+    &__item {
+        @include adaptiv-value('margin-bottom', 87.5, 47, 1);
+
+        @media (min-width: $md3) {
+            @include adaptiv-value('column-gap', 20, 10, 1);
+            display: flex;
+        }
+    }
+
+    &__content {
+        @media (max-width: $md3) {
+            margin-bottom: rem(19);
+        }
+
+        flex: 0 1 50%;
+    }
+
+    &__arrow {
+        position: absolute;
+        z-index: 2;
+        width: rem(20);
+        height: 90%;
+        top: 50%;
+        @include adaptiv-value('right', 19, 13, 1);
+        transform: translate(0, -50%);
+        background-color: #F7F8FC;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: rem(8);
+
+        svg {
+            object-fit: contain;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 85%;
+        }
+    }
+
+    &__header {
+        display: flex;
+        column-gap: rem(22);
+        align-items: center;
+        margin-bottom: rem(20);
+    }
+
+    &__number {
+        @include adaptiv-value('font-size', 50, 32, 1);
+        font-weight: 900;
+        color: var(--red);
+        @include adaptiv-value('padding-right', 13, 10, 1);
+        @include adaptiv-value('padding-left', 13, 10, 1);
+        @include adaptiv-value('padding-top', 20, 10, 1);
+        border-radius: 11px;
+        background: rgb(255, 255, 255);
+        font-family: "Micra", sans-serif;
+        @include adaptiv-value('padding-bottom', 20, 10, 1);
+    }
+
+    &__title {
+        @include adaptiv-value('font-size', 32, 16, 1);
+        font-family: "Micra", sans-serif;
+        line-height: perc(24, 16);
+    }
+
+    &__text {
+        @include adaptiv-value('font-size', 16, 12, 1);
+        line-height: perc(20, 16);
+    }
+
+    &__tick {
+        @include adaptiv-value('font-size', 19.25, 11, 1);
+        @include adaptiv-value('height', 52, 31, 1);
+        @include adaptiv-value('width', 52, 31, 1);
+        position: absolute;
+        border-radius: 50%;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        top: rem(15);
+        left: rem(18);
+        background-color: rgb(72, 240, 86);
+        z-index: 1;
+
+        &_white {
+            background-color: #F7F8FC;
+        }
+    }
+
+    &__image {
+        position: relative;
+        border-radius: 17px;
+        flex: 0 0 50%;
+        min-height: rem(155);
+        box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+/*=============================================================================================================*/
+.ready {
+    @include adaptiv-value('margin-bottom', 100, 80, 1);
+    &__container {}
+
+    &__image {
+        margin: 0 auto;
+        margin-bottom: rem(30);
+        max-width: rem(658);
+        img {
+            max-width: 100%
+        }
+    }
+
+    &__text {
+        margin-bottom: rem(30);
+        text-align: center;
+    }
+
+    &__request {}
+}
+.request-ready {
+    border-radius: 24px;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.1);
+    background: rgb(255, 255, 255);
+    padding-top: rem(25);
+    @include adaptiv-value('padding-left', 56, 15, 1);
+    @include adaptiv-value('padding-right', 56, 15, 1);
+    padding-bottom: rem(30);
+    @media (min-width: $md3){
+        display: flex;
+        align-items: center;
+        @include adaptiv-value('column-gap', 40, 20, 1);
+    }
+
+    @media (max-width: $md3){
+        text-align: center;
+    }
+    &__content {
+        @media (max-width: $md3){
+            margin-bottom: rem(20);
+        }
+    }
+
+    &__title {
+        @include adaptiv-value('font-size', 20, 14, 1);
+        font-weight: 700;
+        margin-bottom: rem(10);
+    }
+
+    &__text {}
+
+    &__button {
+        flex: 1 0 auto;
+        @include adaptiv-value('padding-right', 54.5, 34.5, 1);
+        @include adaptiv-value('padding-left', 54.5, 34.5, 1);
+    }
+}
+
 /*=============================================================================================================*/
 /*=============================================================================================================*/
 /*=============================================================================================================*/

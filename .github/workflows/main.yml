@@ -2,6 +2,10 @@ name: main
 
 on:
   workflow_dispatch:
+    inputs:
+      commit_sha:
+        description: 'SHA of the commit'
+        required: true
 
 jobs:
   build-and-deploy:
@@ -22,7 +26,7 @@ jobs:
       - name: Commit changes
         run: |
           git add .
-          git commit -m "${{ github.sha }}" || echo "no comments"
+          git commit -m "${{ github.event.inputs.commit_sha }}" || echo "no comments"
       
       - name: Set up SSH agent
         run: |

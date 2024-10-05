@@ -118,14 +118,17 @@ body {
     display: inline-block;
     @include adaptiv-value('font-size', 14, 11, 1);
     color: #fff;
-    &.black-text{
+
+    &.black-text {
         color: #000;
     }
+
     font-weight: 700;
     letter-spacing: 13%;
     text-transform: uppercase;
     border-radius: 8px;
-    box-shadow: inset 0px -4px 9.4px 0px rgba(0, 0, 0, 0.52), inset 0px 4px 9.8px 0px rgba(255, 255, 255, 0.57);
+    box-shadow: inset 0px -4px 9.4px 0px rgba(0, 0, 0, 0.52),
+    inset 0px 4px 9.8px 0px rgba(255, 255, 255, 0.57);
     background: rgb(235, 77, 61);
 
     transition: background-color 0.3s ease;
@@ -728,7 +731,22 @@ mark {
         display: flex;
         @include adaptiv-value('column-gap', 32, 15, 1);
     }
-
+    &_white{
+        .form-reviews__input{
+            background-color: #fff;
+            &::placeholder{
+                color: #999999;
+            }
+            color: #000;
+        }
+        .form-reviews__textarea{
+            background-color: #fff;
+            &::placeholder{
+                color: #999999;
+            }
+            color: #000;
+        }
+    }
     &__col {
         @media (min-width: $md3) {
             flex: 0 1 50%;
@@ -738,7 +756,10 @@ mark {
     &__inputs {
         @media (min-width: $md4) {
             display: flex;
+            flex-wrap: wrap;
+
             @include adaptiv-value('column-gap', 24, 8, 1);
+            @include adaptiv-value('row-gap', 16, 8, 1);
         }
 
         @include adaptiv-value('margin-bottom', 16, 11, 1);
@@ -746,7 +767,7 @@ mark {
 
     &__input {
         @media (min-width: $md4) {
-            flex: 0 1 50%;
+            flex: 1 0 40%;
         }
 
         width: 100%;
@@ -1336,12 +1357,14 @@ mark {
 /*=============================================================================================================*/
 .ready {
     @include adaptiv-value('margin-bottom', 100, 80, 1);
+
     &__container {}
 
     &__image {
         margin: 0 auto;
         margin-bottom: rem(30);
         max-width: rem(658);
+
         img {
             max-width: 100%
         }
@@ -1354,6 +1377,7 @@ mark {
 
     &__request {}
 }
+
 .request-ready {
     border-radius: 24px;
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.1);
@@ -1362,17 +1386,19 @@ mark {
     @include adaptiv-value('padding-left', 56, 15, 1);
     @include adaptiv-value('padding-right', 56, 15, 1);
     padding-bottom: rem(30);
-    @media (min-width: $md3){
+
+    @media (min-width: $md3) {
         display: flex;
         align-items: center;
         @include adaptiv-value('column-gap', 40, 20, 1);
     }
 
-    @media (max-width: $md3){
+    @media (max-width: $md3) {
         text-align: center;
     }
+
     &__content {
-        @media (max-width: $md3){
+        @media (max-width: $md3) {
             margin-bottom: rem(20);
         }
     }
@@ -1392,6 +1418,233 @@ mark {
     }
 }
 
+/*=============================================================================================================*/
+/*=============================================================================================================*/
+//портфолио
+/*=============================================================================================================*/
+/*=============================================================================================================*/
+.portfolio-welcome {
+    @include adaptiv-value('padding-top', 195, 100, 1);
+    @include adaptiv-value('padding-bottom', 120, 60, 1);
+
+    &__container {
+        position: relative;
+        text-align: center;
+    }
+
+    &__title {
+        @media (max-width: $md3) {
+            br {
+                display: none;
+            }
+        }
+    }
+
+    &__text {
+        @include adaptiv-value('font-size', 20, 14, 1);
+        max-width: rem(824);
+        margin: 0 auto;
+        @include adaptiv-value('margin-bottom', 54, 24, 1);
+    }
+
+    &__button {}
+}
+
+
+
+/*=============================================================================================================*/
+.cases {
+    @include adaptiv-value('border-radius', 80, 50, 1);
+    overflow: hidden;
+    color: #fff;
+    @include adaptiv-value('margin-bottom', 92, 80, 1);
+
+    &__item {
+        background-color: rgb(24, 24, 24);
+        position: relative;
+
+        &_grey {
+            background: conic-gradient(from 180deg at 50% 50%, rgb(41 41 41), rgb(43 43 43), rgb(39 39 39), rgb(37 37 37), rgb(23 23 23));
+
+            .statistics-cases__item {
+                background-color: #181818;
+            }
+        }
+
+        @media (max-width: $md3) {
+
+            padding-top: rem(32);
+        }
+
+        &:first-child {
+            position: relative;
+            z-index: 3;
+
+            .cases__image {
+                @media (max-width: $md4) {
+
+                    margin-left: rem(-70);
+                }
+            }
+        }
+
+        .cases__background-case_mobile {
+            @media (min-width: $md3) {
+                display: none;
+            }
+
+            @media (max-width: $md3) {
+                max-width: rem(400);
+                height: rem(439);
+                display: block !important;
+            }
+        }
+
+        &:nth-child(2) {
+            .cases__content {
+                @include adaptiv-value('padding-top', 168, 32, 1);
+                max-width: rem(645);
+                @include adaptiv-value('padding-bottom', 163, 32, 1);
+            }
+
+            @media (max-width: $md3) {
+                .cases__background-case {
+                    display: none;
+                }
+
+                @media (max-width: 365px){
+                    padding-bottom: rem(350);
+                    
+                }
+                padding-bottom: rem(400);
+
+                .cases__background-case {
+                    height: rem(439);
+                    bottom: 0;
+                    left: 50%;
+                    transform: translate(-50%, 0);
+                }
+            }
+
+            @media (min-width: 1700px) {
+
+                .cases__background-case {
+                    width: 80%;
+                    max-width: 1400px;
+                    left: 50%;
+                    transform: translate(-50%, 0);
+                    position: absolute;
+                }
+            }
+        }
+    }
+
+    &__background-case {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__container {
+        position: relative;
+
+        @media (min-width: $md3) {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+    }
+
+    &__content {
+        position: relative;
+    }
+
+    &__title {
+        font-family: "Micra", sans-serif;
+        @include adaptiv-value('margin-bottom', 24, 11, 1);
+        @include adaptiv-value('font-size', 32, 16, 1);
+        line-height: perc(40, 32);
+
+        mark {
+            color: var(--blue);
+            font-weight: 700;
+        }
+    }
+
+    &__text {
+        @include adaptiv-value('margin-bottom', 57, 15, 1);
+    }
+
+    &__statistics {}
+
+    &__image {
+
+        flex: 0 0 perc(730, 1290);
+        margin-left: rem(-70);
+
+        @media (max-width: $md3) {
+            max-width: 400px;
+
+        }
+
+        @media (max-width: $md3) {
+            margin: 0 auto;
+        }
+
+        img {
+            max-width: 100%;
+        }
+    }
+}
+
+.statistics-cases {
+    display: flex;
+    @include adaptiv-value('column-gap', 30, 5, 1);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(29%, 1fr));
+
+    &__value {
+        @include adaptiv-value('font-size', 20, 14, 1);
+        font-weight: 700;
+        margin-bottom: em(5, 20);
+    }
+
+    &__text {
+        @include adaptiv-value('font-size', 14, 12, 1);
+        color: rgb(139, 139, 139);
+    }
+
+    &__item {
+        @include adaptiv-value('padding-top', 37, 13, 1);
+        @include adaptiv-value('padding-bottom', 37, 13, 1);
+        @include adaptiv-value('padding-left', 19, 9, 1);
+        padding-right: rem(7);
+        //flex: 0 1 33.3333%;
+        @include adaptiv-value('border-radius', 18, 14, 1);
+        background-color: rgb(48, 48, 48);
+    }
+}
+
+/*=============================================================================================================*/
+.portfolio-form {
+    @include adaptiv-value('margin-bottom', 100, 80, 1);
+    &__container {}
+
+    &__title {
+        @include adaptiv-value('margin-bottom', 38, 21, 1);
+    }
+
+    &__form {
+
+    }
+}
+
+/*=============================================================================================================*/
+/*=============================================================================================================*/
 /*=============================================================================================================*/
 /*=============================================================================================================*/
 /*=============================================================================================================*/

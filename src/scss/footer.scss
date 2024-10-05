@@ -3,7 +3,7 @@
     @include adaptiv-value('padding-top', 46, 29, 1);
     padding-bottom: rem(25);
     color: #999999;
-    
+    position: relative;
     &__container {}
 
     &__main {

@@ -583,6 +583,8 @@ mark {
 
 /*=============================================================================================================*/
 .reviews {
+
+
     position: relative;
     border-radius: 80px 0px 0px 0px;
 
@@ -594,7 +596,31 @@ mark {
     background: rgb(24, 24, 24);
     @include adaptiv-value('padding-top', 60, 40, 1);
     @include adaptiv-value('padding-bottom', 72, 58, 1);
-
+    &_main{
+        @include adaptiv-value('padding-top', 195, 100, 1);
+        .reviews__title{
+            text-align: center;
+            @include adaptiv-value('margin-bottom', 40, 20, 1);
+            color: #000;
+            @media (max-width: $md3){
+                br{
+                    display: none;
+                }
+            }
+        }
+        .reviews__items{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(rem(250), 1fr));
+            @include adaptiv-value('gap', 30, 23, 1);
+        }
+        background-color: #fff;
+        .reviews__item{
+            background: rgb(247, 248, 252);
+        }
+        .reviews__text{
+            background-color: #fff;
+        }
+    }
     &__background {
         position: absolute;
         top: 0;
@@ -660,7 +686,20 @@ mark {
             padding-top: rem(15);
 
         }
-
+        position: relative;
+        &_more{
+            &::before{
+                content:'';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: rem(250);
+                filter: blur(10px);
+                z-index: 3;
+                background: linear-gradient(180.00deg, rgba(115, 115, 115, 0) 0%,rgb(255, 255, 255) 100.226%);
+            }
+        }
         @include adaptiv-value('margin-bottom', 50, 45, 1);
     }
 
@@ -672,7 +711,7 @@ mark {
         padding-left: rem(16);
         border-radius: rem(9);
         position: relative;
-
+        font-size: rem(12);
         @media (max-width: $md3) {
             flex: 0 0 rem(300);
         }
@@ -1644,6 +1683,9 @@ mark {
 }
 
 /*=============================================================================================================*/
+.reviews-form{
+    @include adaptiv-value('padding-top', 100, 80, 1);
+}
 /*=============================================================================================================*/
 /*=============================================================================================================*/
 /*=============================================================================================================*/

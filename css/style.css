@@ -1055,6 +1055,32 @@ mark {
   padding-bottom: 4.5rem;
 }
 
+.reviews_main {
+  padding-top: 12.1875rem;
+  background-color: #fff;
+}
+
+.reviews_main .reviews__title {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: #000;
+}
+
+.reviews_main .reviews__items {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15.625rem, 1fr));
+  gap: 1.875rem;
+}
+
+.reviews_main .reviews__item {
+  background: rgb(247, 248, 252);
+}
+
+.reviews_main .reviews__text {
+  background-color: #fff;
+}
+
 .reviews__background {
   position: absolute;
   top: 0;
@@ -1097,7 +1123,23 @@ mark {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15.625rem, 1fr));
   gap: 1.875rem;
+  position: relative;
   margin-bottom: 3.125rem;
+}
+
+.reviews__items_more::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 15.625rem;
+  -webkit-filter: blur(10px);
+          filter: blur(10px);
+  z-index: 3;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(115, 115, 115, 0)), color-stop(100.226%, rgb(255, 255, 255)));
+  background: -o-linear-gradient(top, rgba(115, 115, 115, 0) 0%, rgb(255, 255, 255) 100.226%);
+  background: linear-gradient(180deg, rgba(115, 115, 115, 0) 0%, rgb(255, 255, 255) 100.226%);
 }
 
 .reviews__item {
@@ -1108,6 +1150,7 @@ mark {
   padding-left: 1rem;
   border-radius: 0.5625rem;
   position: relative;
+  font-size: 0.75rem;
 }
 
 .reviews__quotes {
@@ -2016,6 +2059,10 @@ mark {
 
 /*=============================================================================================================*/
 
+.reviews-form {
+  padding-top: 6.25rem;
+}
+
 /*=============================================================================================================*/
 
 /*=============================================================================================================*/
@@ -2545,6 +2592,18 @@ mark {
     padding-bottom: calc(58px + 14 * ((100vw - 360px) / 1080));
   }
 
+  .reviews_main {
+    padding-top: calc(100px + 95 * ((100vw - 360px) / 1080));
+  }
+
+  .reviews_main .reviews__title {
+    margin-bottom: calc(20px + 20 * ((100vw - 360px) / 1080));
+  }
+
+  .reviews_main .reviews__items {
+    gap: calc(23px + 7 * ((100vw - 360px) / 1080));
+  }
+
   .reviews__title {
     margin-bottom: calc(21px + 17 * ((100vw - 360px) / 1080));
   }
@@ -2947,6 +3006,10 @@ mark {
     margin-bottom: calc(21px + 17 * ((100vw - 360px) / 1080));
   }
 
+  .reviews-form {
+    padding-top: calc(80px + 20 * ((100vw - 360px) / 1080));
+  }
+
   .footer {
     padding-top: calc(29px + 17 * ((100vw - 360px) / 1080));
   }
@@ -3145,6 +3208,10 @@ mark {
 
   .reviews {
     border-radius: 50px 0px 0px 0px;
+  }
+
+  .reviews_main .reviews__title br {
+    display: none;
   }
 
   .reviews__title br {

@@ -336,17 +336,19 @@ mark {
 
     &__items {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(rem(345), 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(rem(400), 1fr));
 
-        @media (max-width: $md3) {
+        @media (max-width: 875px) {
             grid-template-columns: repeat(auto-fill, minmax(rem(250), 1fr));
         }
 
-        @include adaptiv-value('column-gap', 134, 15, 1);
+        @include adaptiv-value('column-gap', 50, 15, 1);
         @include adaptiv-value('row-gap', 42, 20, 1);
     }
 
-    &__item {}
+    &__item {
+        max-width: rem(529);
+    }
 
     &__header {
         display: flex;
@@ -596,31 +598,39 @@ mark {
     background: rgb(24, 24, 24);
     @include adaptiv-value('padding-top', 60, 40, 1);
     @include adaptiv-value('padding-bottom', 72, 58, 1);
-    &_main{
+
+    &_main {
         @include adaptiv-value('padding-top', 195, 100, 1);
-        .reviews__title{
+
+        .reviews__title {
             text-align: center;
             @include adaptiv-value('margin-bottom', 40, 20, 1);
             color: #000;
-            @media (max-width: $md3){
-                br{
+
+            @media (max-width: $md3) {
+                br {
                     display: none;
                 }
             }
         }
-        .reviews__items{
+
+        .reviews__items {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(rem(250), 1fr));
             @include adaptiv-value('gap', 30, 23, 1);
         }
+
         background-color: #fff;
-        .reviews__item{
+
+        .reviews__item {
             background: rgb(247, 248, 252);
         }
-        .reviews__text{
+
+        .reviews__text {
             background-color: #fff;
         }
     }
+
     &__background {
         position: absolute;
         top: 0;
@@ -686,10 +696,12 @@ mark {
             padding-top: rem(15);
 
         }
+
         position: relative;
-        &_more{
-            &::before{
-                content:'';
+
+        &_more {
+            &::before {
+                content: '';
                 position: absolute;
                 bottom: 0;
                 left: 0;
@@ -697,9 +709,10 @@ mark {
                 height: rem(250);
                 filter: blur(10px);
                 z-index: 3;
-                background: linear-gradient(180.00deg, rgba(115, 115, 115, 0) 0%,rgb(255, 255, 255) 100.226%);
+                background: linear-gradient(180.00deg, rgba(115, 115, 115, 0) 0%, rgb(255, 255, 255) 100.226%);
             }
         }
+
         @include adaptiv-value('margin-bottom', 50, 45, 1);
     }
 
@@ -712,6 +725,7 @@ mark {
         border-radius: rem(9);
         position: relative;
         font-size: rem(12);
+
         @media (max-width: $md3) {
             flex: 0 0 rem(300);
         }
@@ -770,22 +784,29 @@ mark {
         display: flex;
         @include adaptiv-value('column-gap', 32, 15, 1);
     }
-    &_white{
-        .form-reviews__input{
+
+    &_white {
+        .form-reviews__input {
             background-color: #fff;
-            &::placeholder{
+
+            &::placeholder {
                 color: #999999;
             }
+
             color: #000;
         }
-        .form-reviews__textarea{
+
+        .form-reviews__textarea {
             background-color: #fff;
-            &::placeholder{
+
+            &::placeholder {
                 color: #999999;
             }
+
             color: #000;
         }
     }
+
     &__col {
         @media (min-width: $md3) {
             flex: 0 1 50%;
@@ -1551,10 +1572,11 @@ mark {
                     display: none;
                 }
 
-                @media (max-width: 365px){
+                @media (max-width: 365px) {
                     padding-bottom: rem(350);
-                    
+
                 }
+
                 padding-bottom: rem(400);
 
                 .cases__background-case {
@@ -1671,21 +1693,415 @@ mark {
 /*=============================================================================================================*/
 .portfolio-form {
     @include adaptiv-value('margin-bottom', 100, 80, 1);
+
     &__container {}
 
     &__title {
         @include adaptiv-value('margin-bottom', 38, 21, 1);
     }
 
-    &__form {
+    &__form {}
+}
 
+/*=============================================================================================================*/
+.reviews-form {
+    @include adaptiv-value('padding-top', 100, 80, 1);
+}
+
+/*=============================================================================================================*/
+/*=============================================================================================================*/
+//О нас
+/*=============================================================================================================*/
+/*=============================================================================================================*/
+
+.about-welcome {
+    @include adaptiv-value('padding-top', 166, 100, 1);
+    @include adaptiv-value('padding-bottom', 86, 41, 1);
+    background-color: #fff;
+
+    &__container {
+        @media (min-width: $md3) {
+            display: flex;
+
+            @include adaptiv-value('row-gap', 26, 15, 1);
+            flex-wrap: wrap;
+        }
+
+    }
+
+    &__content {
+        @media (min-width: $md3) {
+            flex: 0 0 perc(766, 1290);
+            @include adaptiv-value('padding-top', 48, 30, 1);
+
+        }
+
+        @media (max-width: $md3) {
+
+            text-align: center;
+        }
+
+        @include adaptiv-value('padding-bottom', 30, 22, 1);
+    }
+
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+    }
+
+    &__row-content {
+        @media (min-width: $md3) {
+            display: flex;
+            @include adaptiv-value('column-gap', 46, 20, 1);
+        }
+
+        @media (max-width: $md3) {
+            margin-bottom: rem(7);
+        }
+
+        .about-welcome__image {
+            min-height: rem(179);
+        }
+
+    }
+
+    &__title {}
+
+    &__text {}
+
+    &__image {
+        @include adaptiv-value('border-radius', 24, 18, 1);
+        overflow: hidden;
+        position: relative;
+        height: 100%;
+        flex: 1 1 auto;
+
+        //width: 100%;
+    }
+
+    &__images {
+        flex: 1 0 100%;
+        display: flex;
+        @include adaptiv-value('column-gap', 28, 8, 1);
+
+        .about-welcome__image {
+            &:first-child {
+                flex: 0 1 33.3333%;
+            }
+
+            &:last-child {
+                flex: 0 1 66.6666%;
+
+            }
+
+        }
+
+        @include adaptiv-value('height', 283, 130, 1);
     }
 }
 
 /*=============================================================================================================*/
-.reviews-form{
+.clients {
     @include adaptiv-value('padding-top', 100, 80, 1);
+    padding-bottom: rem(80);
+
+    &__container {}
+
+    &__title {
+        @include adaptiv-value('margin-bottom', 26, 21, 1);
+    }
+
+    &__items {
+        @media (min-width: $md3) {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(rem(180), 1fr));
+        }
+
+        @media (max-width: $md3) {
+            display: flex;
+            overflow-x: auto;
+        }
+
+        justify-content: space-between;
+        @include adaptiv-value('gap', 30, 14, 1);
+        padding-bottom: rem(5);
+    }
+
+    &__item {
+        @media (max-width: $md3) {
+            flex: 0 0 rem(103);
+        }
+
+        overflow: hidden;
+        @include adaptiv-value('border-radius', 14, 10, 1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: rem(10);
+        background-color: #fff;
+
+        img {
+            max-height: rem(50);
+            max-width: 100%
+        }
+    }
 }
+
+/*=============================================================================================================*/
+.honors {
+    @include adaptiv-value('padding-bottom', 108, 80, 1);
+
+    &__container {}
+
+    &__title {
+        @include adaptiv-value('margin-bottom', 25, 21, 1);
+
+        @media (min-width: $md4) {
+            text-align: left;
+        }
+    }
+
+    &__body {
+        @media (min-width: 600px) {
+            display: flex;
+            flex-direction: row-reverse;
+            @include adaptiv-value('column-gap', 30, 20, 1);
+        }
+    }
+
+    &__image {
+        flex: 0 0 50%;
+        min-height: rem(179);
+        max-height: rem(400);
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        position: relative;
+        overflow: hidden;
+        @include adaptiv-value('border-radius', 24, 18, 1);
+        //height: 100%;
+    }
+
+    &__items {
+        flex: 1 1 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(rem(290), 1fr));
+
+        @media (max-width: $md3) {
+            grid-template-columns: repeat(auto-fill, minmax(rem(150), 1fr));
+            margin-bottom: rem(28);
+        }
+
+        @include adaptiv-value('column-gap', 30, 20, 1);
+        @include adaptiv-value('row-gap', 35, 30, 1);
+
+    }
+
+    &__item {
+        display: flex;
+        @include adaptiv-value('column-gap', 21, 8, 1);
+    }
+
+    &__icon {
+        flex: 0 0 rem(53);
+
+        @media (max-width: $md3) {
+            flex: 0 0 rem(25);
+
+        }
+
+        img {
+            max-width: 100%
+        }
+    }
+
+    &__item-content {}
+
+    &__title-item {
+        font-weight: 700;
+    }
+
+    &__text {}
+}
+
+.reviews_about {
+    @include adaptiv-value('padding-top', 40, 25, 1);
+    padding-bottom: rem(50);
+}
+
+/*=============================================================================================================*/
+.development-path {
+    padding-top: rem(80);
+    padding-bottom: rem(80);
+
+    &__container {}
+
+    &__title {
+        @include adaptiv-value('margin-bottom', 16, 3, 1);
+    }
+
+    &__items {
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            width: rem(1);
+            height: 100%;
+            left: 50%;
+            transform: translate(-50%, 0);
+            top: rem(20);
+            background-color: #000;
+        }
+        @media (max-width: $md3){
+            &::before{
+                left: 100%;
+            }
+        }
+    }
+
+    &__item {
+        @media (min-width: $md3) {
+            width: 50%;
+
+            >* {
+                margin-right: rem(40);
+            }
+        }
+        @media (max-width: $md3){
+            >* {
+                margin-right: rem(35);
+            }
+        }
+        &:last-child{
+            position: relative;
+            &::after{
+                content:'';
+                position: absolute;
+                background-color: #F7F8FC;
+                right: calc(100% - 10px);
+                height: 100%;
+                width: 100%;
+                top: 19%;
+                @media (max-width: $md3){
+                    display: none;
+                }
+            }
+            &::before{
+                content:'';
+                position: absolute;
+                background-color: #F7F8FC;
+                right: calc(-100% + 10px);
+                height: 100%;
+                width: 100%;
+                top: 19%;
+            }
+        }
+        &:nth-child(2n) {
+            @media (min-width: $md3){
+                .development-path__year {
+                    text-align: left;
+                    
+                    &::before {
+                        right: calc(100% + 29px);
+                    }
+                    &::after{
+                        right: calc(100% + 34px);
+                    }
+                }
+            }
+
+
+            @media (min-width: $md3) {
+                margin-left: auto;
+
+                .development-path__text {
+                    border-radius: 14px 0px 14px 14px;
+                }
+
+                >* {
+                    margin-right: rem(0);
+                    margin-left: rem(40);
+                }
+            }
+        }
+    }
+
+    &__year {
+        text-align: right;
+        font-family: "Micra", sans-serif;
+        font-weight: 700;
+        color: var(--red);
+        @include adaptiv-value('font-size', 32, 27, 1);
+        line-height: perc(57, 32);
+        @include adaptiv-value('margin-bottom', 11, 4, 1);
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%);
+            border-radius: 50%;
+            width: rem(22);
+            height: rem(22);
+            right: rem(-51);
+            z-index: 2;
+            background-color: #98FAEA;
+            @media (max-width: $md3){
+                right: rem(-45);
+            }
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%);
+            border-radius: 50%;
+            width: rem(12);
+            z-index: 2;
+            height: rem(12);
+            right: rem(-46);
+            background-color: #EB4D3D;
+            @media (max-width: $md3){
+                right: rem(-40);
+            }
+        }
+    }
+
+    &__text {
+        position: relative;
+        z-index: 3;
+        border-radius: 14px 0px 14px 14px;
+        box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.1);
+        background: rgb(255, 255, 255);
+        @include adaptiv-value('padding-top', 25, 10, 1);
+        @include adaptiv-value('padding-bottom', 30, 10, 1);
+        @include adaptiv-value('padding-right', 30, 14, 1);
+        @include adaptiv-value('padding-left', 30, 14, 1);
+    }
+}
+
+/*=============================================================================================================*/
+/*=============================================================================================================*/
+/*=============================================================================================================*/
+/*=============================================================================================================*/
+/*=============================================================================================================*/
+/*=============================================================================================================*/
+/*=============================================================================================================*/
+/*=============================================================================================================*/
 /*=============================================================================================================*/
 /*=============================================================================================================*/
 /*=============================================================================================================*/

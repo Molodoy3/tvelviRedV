@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> — Tvelvi</title>
+    <meta name="description" content="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap&_v=20241006214646"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.min.css?_v=20241006214646">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header header_white">
+    <div class="header__body header__container">
+        <div class="header__row">
+            <a href="index.html" class="header__logo logo">
+                <img src='img/logo.svg' alt='logo'>
+            </a>
+            <div class='header__menu menu'>
+                <div class='menu__icon'>
+                    <span></span>
+                </div>
+                <nav class='menu__body'>
+                    <ul data-spollers='1075,max' class='menu__list'>
+                        <li class="menu__item"><a href='index.html'class='menu__link'>Главная</a></li>
+                        <li class="menu__item ">
+                            <a href='services.html' class='menu__link'>Услуги</a>
+                            <div data-spoller tabindex='-1' class="menu__arrow ic-arrow"></div>
+                            <ul class="menu__sub-list">
+                                <li><a href="" class="menu__sub-link">Услуги 1</a></li>
+                                <li><a href="" class="menu__sub-link">Услуги 2</a></li>
+                                <li><a href="" class="menu__sub-link">Услуги 3</a></li>
+                                <li><a href="" class="menu__sub-link">Услуги 4</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu__item "><a href='about.html' class='menu__link'>О нас</a></li>
+                        <li class="menu__item "><a href='portfolio.html' class='menu__link'>Портфолио</a></li>
+                        <li class="menu__item "><a href='reviews.html' class='menu__link'>Отзывы</a></li>
+                        <li class="menu__item "><a href='/#connect' class='menu__link'>Цены</a></li>
+                        <li class="menu__item active">
+                            <a href='contacts.html' class='menu__link'>Контакты</a>
+                            <div data-spoller tabindex='-1' class="menu__arrow ic-arrow"></div>
+                            <ul class="menu__sub-list">
+                                <li><a href="article.html" class="menu__sub-link">Контакты 1</a></li>
+                                <li><a href="" class="menu__sub-link">Контакты 2</a></li>
+                                <li><a href="" class="menu__sub-link">Контакты 3</a></li>
+                                <li><a href="" class="menu__sub-link">Контакты 4</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="header__info info" data-da = ".menu__body,1075,last">
+                <a href="tel:+79157777777" class="info__item ic-telephone">+7 (915) 777 77 77</a>
+                <div class="info__item ic-clock">пн-пт с 10 до 18 часов</div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="page">
+            <section class="contacts-form">
+                <div class='contacts-form__container'>
+                    <h1 class="contacts-form__title title">Расскажите про ваш проект</h1>
+                    <form action="#" class="contacts-form__form reviews__form form-reviews form-reviews_white">
+                        <div class="form-reviews__col">
+                            <div class="form-reviews__inputs">
+                                <input type="text" name="name" placeholder="Имя" class="form-reviews__input">
+                                <input type="tel" name="tel" placeholder="Телефон" class="form-reviews__input">
+                                <input type="text" name="company" placeholder="Компания" class="form-reviews__input">
+                                <input type="email" name="email" placeholder="E-mail" class="form-reviews__input">
+                            </div>
+                            <button type="submit" name="submit" class="reviews__button button">отправить</button>
+                        </div>
+                        <div class="form-reviews__col">
+                            <textarea name="text" placeholder="Текст сообщения" class="form-reviews__textarea"></textarea>
+                            <button type="submit" name="submit"
+                                class="reviews__button reviews__button_mobile button">отправить</button>
+                        </div>
+                        <div class="form-reviews__col">
+                            <div class="form-reviews__person person-form">
+                                <div class="person-form__header">
+                                    <div class="person-form__image">
+                                        <picture>
+                                            <source srcset='img/contacts/person.webp' type='image/webp'>
+                                            <img src='img/contacts/person.jpeg' alt='person'>
+                                        </picture>
+                                    </div>
+                                    <div class="form-reviews__info">
+                                        <h2 class="person-form__name">Морозов 
+                                            Андрей Викторович</h2>
+                                        <div class="person-form__position">Руководитель компании</div>
+                                    </div>
+                                </div>
+                                <div class="person-form__text ic-quotes">
+                                    Изменение глобальной стратегии оправдывает типичный комплексный анализ ситуации. 
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+            <section id="connect" class="connect">
+                <div class='connect__container'>
+                    <div class="connect__window window-connect">
+                        <h3 class="window-connect__title title">Свяжитесь с нами</h3>
+                        <div class="window-connect__items">
+                            <div class="window-connect__info">
+                                <div class="window-connect__value">Адрес:</div>
+                                <div class="window-connect__text">г. Москва, ул.Андрея Андреева, 8</div>
+                            </div>
+                            <div class="window-connect__info">
+                                <div class="window-connect__value">График работы:</div>
+                                <div class="window-connect__text">Пн-пт 9:00-18:00<br>Сб-вс выходной</div>
+                            </div>
+                            <div class="window-connect__info">
+                                <div class="window-connect__value">Телефон:</div>
+                                <div class="window-connect__text"><a href="tel:+79697777777">+7(969)777 77 77</a></div>
+                            </div>
+                            <div class="window-connect__info">
+                                <div class="window-connect__value">Почта:</div>
+                                <div class="window-connect__text"><a href="mailto:info@твелви.ru">info@твелви.ru</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="connect__map connect__map_main" style="position:relative;overflow:hidden;"><!-- <a
+                        href="https://yandex.ru/maps/213/moscow/?utm_medium=mapframe&utm_source=maps"
+                        style="color:#eee;font-size:12px;position:absolute;top:0px;">Москва</a><a
+                        href="https://yandex.ru/maps/geo/ulitsa_pavla_andreyeva_7_podyezd_1/2092134474/?ll=37.639295%2C55.717424&utm_medium=mapframe&utm_source=maps&z=14.51"
+                        style="color:#eee;font-size:12px;position:absolute;top:14px;">Улица Павла Андреева, 7, подъезд 1
+                        — Яндекс Карты</a> --><iframe
+                        src="https://yandex.ru/map-widget/v1/?ll=37.639295%2C55.717424&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NjY4ODI5MhJX0KDQvtGB0YHQuNGPLCDQnNC-0YHQutCy0LAsINGD0LvQuNGG0LAg0J_QsNCy0LvQsCDQkNC90LTRgNC10LXQstCwLCA3LCDQv9C-0LTRitC10LfQtCAxIgoNgH8WQhXa4V5CMMrgzeUH&z=14.51"
+                        frameborder="1" allowfullscreen="true"
+                        style="position:relative;"></iframe>
+                </div>
+            </section>
+        </div>
+        <footer class="footer">
+    <div class='footer__container'>
+        <div class="footer__main">
+            <a href="" class="footer__logo logo">
+                <img src='img/logo.svg' alt='logo'>
+            </a>
+            <nav class="footer__menu">
+                <ul class="footer__list">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="">Услуги</a></li>
+                    <li><a href="">О нас</a></li>
+                    <li><a href="">Портфоли</a></li>
+                    <li><a href="">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="footer__links">
+                <ul class="footer__social-list">
+                    <li><a class="ic-telegram" href=""></a></li>
+                    <li><a class="ic-whatsapp" href=""></a></li>
+                    <li><a class="ic-vk" href=""></a></li>
+                </ul>
+                <a href="/sitemap.xml" class="footer__sitemap">Карта сайта</a>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="footer__info">© 2024 ТВЭЛВИ. Все права защищены.</div>
+            <a href="" class="footer__politic">Политика конфиденциальности</a>
+        </div>
+    </div>
+</footer>
+    </div>
+    <script src="js/app.min.js?_v=20241006214646"></script>
+</body>
+
+</html>

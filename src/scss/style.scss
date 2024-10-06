@@ -1846,7 +1846,10 @@ mark {
         background-color: #fff;
 
         img {
-            max-height: rem(50);
+            @media (max-width: $md3){
+                
+                max-height: rem(50);
+            }
             max-width: 100%
         }
     }

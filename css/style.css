@@ -2170,7 +2170,6 @@ mark {
 }
 
 .clients__item img {
-  max-height: 3.125rem;
   max-width: 100%;
 }
 
@@ -3827,6 +3826,10 @@ mark {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 6.4375rem;
             flex: 0 0 6.4375rem;
+  }
+
+  .clients__item img {
+    max-height: 3.125rem;
   }
 
   .honors__items {

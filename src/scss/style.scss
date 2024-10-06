@@ -186,7 +186,7 @@ body {
     border-radius: rem(8);
     background-color: var(--red);
     color: #fff;
-    column-gap: rem(3);
+    column-gap: rem(6);
     align-items: center;
     flex-direction: row-reverse;
 
@@ -2073,7 +2073,7 @@ mark {
                 margin-left: auto;
 
                 .development-path__text {
-                    border-radius: 14px 0px 14px 14px;
+                    border-radius: 0px 14px 14px 14px;
                 }
 
                 >* {
@@ -2327,7 +2327,10 @@ mark {
         }
     }
     .person-form{
-        margin-top: rem(30);
+        @media (max-width: $md3){
+            
+            margin-top: rem(30);
+        }
     }
     .form-reviews__col{
         &:last-child{

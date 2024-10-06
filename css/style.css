@@ -369,9 +369,9 @@ body.load {
   border-radius: 0.5rem;
   background-color: var(--red);
   color: #fff;
-  -webkit-column-gap: 0.1875rem;
-     -moz-column-gap: 0.1875rem;
-          column-gap: 0.1875rem;
+  -webkit-column-gap: 0.375rem;
+     -moz-column-gap: 0.375rem;
+          column-gap: 0.375rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -2563,10 +2563,6 @@ mark {
   margin-bottom: 1.875rem;
 }
 
-.contacts-form .person-form {
-  margin-top: 1.875rem;
-}
-
 .contacts-form .form-reviews__col:last-child {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 22.5563909774%;
@@ -2986,7 +2982,7 @@ mark {
   }
 
   .development-path__item:nth-child(2n) .development-path__text {
-    border-radius: 14px 0px 14px 14px;
+    border-radius: 0px 14px 14px 14px;
   }
 
   .development-path__item:nth-child(2n) > * {
@@ -4237,6 +4233,10 @@ mark {
 
   .contacts-form__title {
     text-align: center;
+  }
+
+  .contacts-form .person-form {
+    margin-top: 1.875rem;
   }
 }
 
